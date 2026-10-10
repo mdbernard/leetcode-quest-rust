@@ -9,7 +9,6 @@ struct ExclusiveTime {
 }
 
 impl Solution {
-
     // ------------------------------------------------------------------------
     // ARRAY I
     // ------------------------------------------------------------------------
@@ -75,10 +74,12 @@ impl Solution {
         for i in 0..nums.len() {
             let mut num_less = 0;
             for j in 0..nums.len() {
-                if i == j { continue; }
-                    if nums[j] < nums[i] {
-                        num_less += 1;
-                    }
+                if i == j {
+                    continue;
+                }
+                if nums[j] < nums[i] {
+                    num_less += 1;
+                }
             }
             ans.push(num_less);
         }
@@ -90,7 +91,8 @@ impl Solution {
         for n in &nums {
             exists[*n as usize - 1] = true;
         }
-        exists.iter()
+        exists
+            .iter()
             .enumerate()
             .filter_map(|(i, &num_exists)| (!num_exists).then_some((i + 1) as i32))
             .collect()
@@ -107,7 +109,7 @@ impl Solution {
 
         let mut stack: Vec<i32> = vec![];
         let mut stream = 1;
-        
+
         for &number in target.iter() {
             if stack == target {
                 break;
@@ -127,7 +129,7 @@ impl Solution {
 
     pub fn eval_rpn(tokens: Vec<String>) -> i32 {
         let mut stack: Vec<i32> = vec![];
-        
+
         for token in &tokens {
             match token.as_str() {
                 "+" => {
@@ -165,7 +167,11 @@ impl Solution {
             let time = parts.next().unwrap().parse::<i32>().unwrap();
 
             if start_end == "start" {
-                stack.push(ExclusiveTime { id, start_time: time, time_out: 0 });
+                stack.push(ExclusiveTime {
+                    id,
+                    start_time: time,
+                    time_out: 0,
+                });
                 continue;
             }
 
@@ -183,5 +189,4 @@ impl Solution {
     }
 }
 
-fn main() {
-}
+fn main() {}
