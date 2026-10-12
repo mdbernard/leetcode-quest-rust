@@ -7,7 +7,7 @@ struct ExclusiveTime {
 }
 
 impl Solution {
-    pub fn build_array(target: Vec<i32>, n: i32) -> Vec<String> {
+    pub fn build_array(target: Vec<i32>, #[allow(unused_variables)] n: i32) -> Vec<String> {
         let mut ans = vec![];
         let push = String::from("Push");
         let pop = String::from("Pop");
@@ -29,7 +29,7 @@ impl Solution {
             stream += 1;
         }
 
-        return ans;
+        ans
     }
 
     pub fn eval_rpn(tokens: Vec<String>) -> i32 {
@@ -58,7 +58,7 @@ impl Solution {
             }
         }
 
-        return stack.pop().unwrap();
+        stack.pop().unwrap()
     }
 
     pub fn exclusive_time(n: i32, logs: Vec<String>) -> Vec<i32> {
@@ -85,12 +85,11 @@ impl Solution {
             let exclusive_time = total_time - start_log.time_out;
             ans[start_log.id as usize] += exclusive_time;
 
-            let top = stack.last_mut();
-            if top.is_some() {
-                top.unwrap().time_out += total_time;
+            if let Some(top) = stack.last_mut() {
+                top.time_out += total_time;
             }
         }
-        return ans;
+        ans
     }
 }
 

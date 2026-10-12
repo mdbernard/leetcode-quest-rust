@@ -19,7 +19,7 @@ impl Solution {
             (Some(&n), None) => Some(n),
             _ => panic!("Expected exactly 1 missing value"),
         };
-        return vec![duplicate.unwrap(), missing.unwrap()];
+        vec![duplicate.unwrap(), missing.unwrap()]
     }
 
     pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {
@@ -36,7 +36,7 @@ impl Solution {
             }
             ans.push(num_less);
         }
-        return ans;
+        ans
     }
 
     pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {

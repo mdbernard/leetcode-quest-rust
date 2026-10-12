@@ -4,7 +4,7 @@ impl Solution {
     pub fn get_concatenation(nums: Vec<i32>) -> Vec<i32> {
         let mut ans = Vec::from(&nums[..]);
         ans.extend(&nums[..]);
-        return ans;
+        ans
     }
 
     pub fn shuffle(nums: Vec<i32>, n: i32) -> Vec<i32> {
@@ -14,7 +14,7 @@ impl Solution {
             ans.push(nums[i]);
             ans.push(nums[i + n]);
         }
-        return ans;
+        ans
     }
 
     pub fn find_max_consecutive_ones(nums: Vec<i32>) -> i32 {
@@ -31,7 +31,7 @@ impl Solution {
                 current = 0;
             }
         }
-        return ans;
+        ans
     }
 }
 

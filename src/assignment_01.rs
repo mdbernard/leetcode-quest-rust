@@ -66,7 +66,7 @@ impl Solution {
         if !found_peak {
             return false;
         }
-        return true;
+        true
     }
 }
 
@@ -91,32 +91,30 @@ mod tests {
 
     #[test]
     fn valid_mountain_array_example_1() {
-        assert_eq!(Solution::valid_mountain_array(vec![2, 1]), false)
+        assert!(!Solution::valid_mountain_array(vec![2, 1]))
     }
 
     #[test]
     fn valid_mountain_array_example_2() {
-        assert_eq!(Solution::valid_mountain_array(vec![3, 3, 5]), false)
+        assert!(!Solution::valid_mountain_array(vec![3, 3, 5]))
     }
 
     #[test]
     fn valid_mountain_array_example_3() {
-        assert_eq!(Solution::valid_mountain_array(vec![0, 3, 2, 1]), true)
+        assert!(Solution::valid_mountain_array(vec![0, 3, 2, 1]))
     }
 
     #[test]
     fn valid_mountain_array_example_4() {
-        assert_eq!(
-            Solution::valid_mountain_array(vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
-            false
-        )
+        assert!(!Solution::valid_mountain_array(vec![
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        ]))
     }
 
     #[test]
     fn valid_mountain_array_example_5() {
-        assert_eq!(
-            Solution::valid_mountain_array(vec![9, 8, 7, 6, 5, 4, 3, 2, 1, 0]),
-            false
-        )
+        assert!(!Solution::valid_mountain_array(vec![
+            9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+        ]))
     }
 }

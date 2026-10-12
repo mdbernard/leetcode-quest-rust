@@ -30,7 +30,7 @@ impl Solution {
             stack.push((i, *price));
         }
 
-        return ans;
+        ans
     }
 
     pub fn daily_temperatures(temperatures: Vec<i32>) -> Vec<i32> {
@@ -49,7 +49,7 @@ impl Solution {
             stack.push((i, *temp));
         }
 
-        return ans;
+        ans
     }
 
     pub fn largest_rectangle_area(heights: Vec<i32>) -> i32 {
@@ -100,7 +100,7 @@ impl Solution {
             let width = (right_i - left_i) as i32;
             max_area = std::cmp::max(max_area, (width) * height);
         }
-        return max_area;
+        max_area
     }
 
     pub fn largest_rectangle_area_2(heights: Vec<i32>) -> i32 {
@@ -123,7 +123,7 @@ impl Solution {
             }
         }
 
-        return max_area;
+        max_area
     }
 }
 
